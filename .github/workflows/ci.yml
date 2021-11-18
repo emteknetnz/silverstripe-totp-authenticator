@@ -1,0 +1,11 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  ci:
+    uses: emteknetnz/github-actions-ci-cd/.github/workflows/ci.yml@dynamic
+    with:
+      composer_require_extra: silverstripe/webauthn-authenticator:^4 silverstripe/frameworktest:^0.4.2 silverstripe/recipe-testing: ^2
