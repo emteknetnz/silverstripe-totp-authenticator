@@ -186,4 +186,9 @@ class VerifyHandlerTest extends SapphireTest
         $this->handler->start($this->store, $this->member->RegisteredMFAMethods()->first());
         $this->assertTrue(true);
     }
+
+    public function testF()
+    {
+        $this->assertTrue(true);
+    }
 }
