@@ -117,15 +117,69 @@ class VerifyHandlerTest extends SapphireTest
         );
     }
 
-    public function testExceptionsOnStartMethodAreLogged()
+    //public function testExceptionsOnStartMethodAreLogged()
+    public function testA()
+    {
+        Environment::setEnv('SS_MFA_SECRET_KEY', null);
+
+        /** @var LoggerInterface|MockObject $logger */
+        $logger = $this->createMock(LoggerInterface::class);
+        #$logger->expects($this->once())->method('debug');
+        
+        // $this->handler->setLogger($logger);
+        // $this->handler->start($this->store, $this->member->RegisteredMFAMethods()->first());
+        $this->assertTrue(true);
+    }
+
+    public function testB()
+    {
+        Environment::setEnv('SS_MFA_SECRET_KEY', null);
+
+        /** @var LoggerInterface|MockObject $logger */
+        $logger = $this->createMock(LoggerInterface::class);
+        #$logger->expects($this->once())->method('debug');
+        
+        $this->handler->setLogger($logger);
+        // $this->handler->start($this->store, $this->member->RegisteredMFAMethods()->first());
+        $this->assertTrue(true);
+    }
+
+    public function testC()
+    {
+        Environment::setEnv('SS_MFA_SECRET_KEY', null);
+
+        /** @var LoggerInterface|MockObject $logger */
+        $logger = $this->createMock(LoggerInterface::class);
+        #$logger->expects($this->once())->method('debug');
+        
+        $abc = $this->member->RegisteredMFAMethods()->first();
+        echo get_class($abc);
+        $this->assertTrue(true);
+    }
+
+    public function testD()
+    {
+        Environment::setEnv('SS_MFA_SECRET_KEY', null);
+
+        /** @var LoggerInterface|MockObject $logger */
+        $logger = $this->createMock(LoggerInterface::class);
+        #$logger->expects($this->once())->method('debug');
+        
+        $this->handler->setLogger($logger);
+        $this->handler->start($this->store, $this->member->RegisteredMFAMethods()->first());
+        $this->assertTrue(true);
+    }
+
+    public function testE()
     {
         Environment::setEnv('SS_MFA_SECRET_KEY', null);
 
         /** @var LoggerInterface|MockObject $logger */
         $logger = $this->createMock(LoggerInterface::class);
         $logger->expects($this->once())->method('debug');
-
+        
         $this->handler->setLogger($logger);
         $this->handler->start($this->store, $this->member->RegisteredMFAMethods()->first());
+        $this->assertTrue(true);
     }
 }
