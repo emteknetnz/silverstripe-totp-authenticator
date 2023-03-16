@@ -117,6 +117,10 @@ class VerifyHandlerTest extends SapphireTest
         );
     }
 
+    public function testPre() {
+        $this->assertTrue(true);
+    {
+
     //public function testExceptionsOnStartMethodAreLogged()
     public function testA()
     {
